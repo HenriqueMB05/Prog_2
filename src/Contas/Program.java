@@ -3,7 +3,9 @@ package Contas;
 public class Program {
 	public static void main(String[] args) {
 		Cliente t1 = new Cliente ("Henrique", "Bonfim", "000000000-00");
-		Conta c1 = new Conta(1234, 30000.0, t1);
+		Conta c1 = new Conta(1234, 100.0, t1);
+		Cliente t2 = new Cliente ("Jairo", "Bonfim", "000000000-00");
+		Conta c2 = new Conta(1235, 100.0, t2);
 		
 		
 		System.out.printf("Titular: %s %s\n", c1.titular.nome, c1.titular.sobrenome);
@@ -25,6 +27,8 @@ public class Program {
 		
 		System.out.println("CPF do titular: "+ c1.titular.cpf);
 		
-
+		c1.transfere(c2, 350.0);
+		System.out.println("Saldo de "+ c2.titular.nome +" R$"+ c2.saldo);
+		System.out.println("Saldo de "+ c1.titular.nome +" R$"+ c1.saldo);
 	}
 }
